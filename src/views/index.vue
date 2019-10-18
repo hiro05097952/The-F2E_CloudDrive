@@ -93,7 +93,7 @@
           <i class="menuSwitch" @click.stop="openMenu(key)"></i>
           <ul class="editMenu" v-if="isChangeMenu[0] === key">
             <li>重新命名</li>
-            <li @click.stop="item.url">下載</li>
+            <li @click.stop="downloadItem(item.url)">下載</li>
             <li>共享</li>
             <li @click.stop="favFile(key)">加星號</li>
             <li>更改顏色</li>
@@ -405,6 +405,9 @@ export default {
     },
     alert() {
       alert('此功能尚未完成哦！');
+    },
+    downloadItem(url) {
+      window.open(url, 'download');
     },
   },
   computed: {
